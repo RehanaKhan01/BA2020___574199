@@ -1,4 +1,5 @@
-django.db import migrations,
+django.db
+from shoppinglist import migrations
 import django.db.models.deletion
 import django.utils.timezone
 
