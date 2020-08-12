@@ -1,4 +1,4 @@
-django.db import migrations, models
+django.db import migrations,
 import django.db.models.deletion
 import django.utils.timezone
 
