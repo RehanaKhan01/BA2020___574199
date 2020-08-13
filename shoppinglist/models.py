@@ -3,24 +3,19 @@ from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
 import django.utils.timezone
+from django.utils import timezone
 
 
-class Migration(migrations.Migration):
+class todolist(models .Model):
+    author = models .ForeignKey(settings.AUTH_USER_MODEL, on_delete=models .CASCADE)
+    title = models .CharField(max_length=200)
+    created_date = models .DateTimeField(default=timezone.now)
 
-    initial = True
 
-    dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-    ]
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
 
-    operations = [
-        migrations.CreateModel(
-            name='shoppinglist',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200)),
-                ('created_date', models.DateTimeField(default=django.utils.timezone.now)),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
-            ],
-        ),
-    ]
+    def __str__(self):
+        return self.title
+# Create your models here

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from django.contrib import admin
-from .models import shoppinglist
+from shoppinglist.models import todolist
 
 
-admin.site.register(shoppinglist)
+admin.site.register(todolist)
